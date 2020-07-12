@@ -1,0 +1,28 @@
+Write a method called isPalindrome with one int parameter called number.
+The method needs to return a boolean.
+It should return true if the number is a palindrome number otherwise it should return false.
+
+Example Input/Output
+isPalindrome(-1221); → should return true
+isPalindrome(707); → should return true
+isPalindrome(11212); → should return false because reverse is 21211 and that is not equal to 11212.
+
+Tip: What is a Palindrome number?  A palindrome number is a number which when reversed is equal to the original number. For example: 121, 12321, 1001 etc.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+public class NumberPalindrome {
+ public static boolean isPalindrome(int number){
+     int newN=0;
+     int original=number;
+     while(number!=0){
+         int lastD=number%10;;
+         newN=newN*10+lastD;
+         number/=10;
+     }
+     System.out.println(newN);
+         if (newN==original) //need to compare with "original", because"number" has changed its value in the while loop
+           return true;
+           return false;
+         
+     }
+ }
